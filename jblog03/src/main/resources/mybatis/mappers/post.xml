@@ -4,7 +4,7 @@
 	<select id="findAllByNo" parameterType="long"
 		resultType="postvo">
 		<![CDATA[
-		select no, title, contents, category_no as categoryNo from post where category_no=#{categoryNo } order by no
+		select no, title, contents, category_no as categoryNo from post where category_no=#{categoryNo } order by no desc
 		]]>
 	</select>
 
@@ -12,7 +12,7 @@
 		<choose>
 			<when test='postNo == 0'>
 			<![CDATA[
-			select no, title, contents, category_no as categoryNo from post where category_no=#{categoryNo } order by no limit 0, 1
+			select no, title, contents, category_no as categoryNo from post where category_no=#{categoryNo } order by no desc limit 0, 1
 			]]>
 			</when>
 			<otherwise>
