@@ -15,6 +15,11 @@ public class LogoutInterceptor implements HandlerInterceptor {
 		session.removeAttribute("authUser");
 		session.invalidate();
 
+		if (request.getParameter("blogid") != null) {
+			response.sendRedirect(request.getContextPath() + "/" + request.getParameter("blogid"));
+			return false;
+		}
+
 		response.sendRedirect(request.getContextPath());
 		return false;
 	}
