@@ -8,10 +8,12 @@
 	<ul>
 		<c:choose>
 			<c:when test="${empty authUser }">
-				<li><a href="${pageContext.request.contextPath }/user/login">로그인</a></li>
+				<li><a
+					href="${pageContext.request.contextPath }/user/login?blogid=${id }">로그인</a></li>
 			</c:when>
 			<c:otherwise>
-				<li><a href="${pageContext.request.contextPath }/user/logout">로그아웃</a></li>
+				<li><a
+					href="${pageContext.request.contextPath }/user/logout?blogid=${id }">로그아웃</a></li>
 			</c:otherwise>
 		</c:choose>
 		<c:if test="${id == authUser.id }">
