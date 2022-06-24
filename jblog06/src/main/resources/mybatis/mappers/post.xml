@@ -17,7 +17,7 @@
 			</when>
 			<otherwise>
 			<![CDATA[
-			select no, title, contents, category_no as categoryNo from post where category_no=#{categoryNo } and no=#{postNo }
+			select no, title, contents, category_no as categoryNo from post where category_no=#{categoryNo } and no=#{postNo } limit 0, 1
 			]]>
 			</otherwise>
 		</choose>
